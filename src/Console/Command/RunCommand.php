@@ -6,6 +6,7 @@ use Facebook\WebDriver\Remote\WebDriverBrowserType;
 use Lmc\Steward\Console\CommandEvents;
 use Lmc\Steward\Console\Configuration\ConfigOptions;
 use Lmc\Steward\Console\Event\BasicConsoleEvent;
+use Lmc\Steward\Process\ExecutionLoop;
 use Lmc\Steward\Console\Event\ExtendedConsoleEvent;
 use Lmc\Steward\Process\MaxTotalDelayStrategy;
 use Lmc\Steward\Process\ProcessSet;
@@ -62,6 +63,8 @@ class RunCommand extends Command
     const PAYMENT_PROCESSOR = 'pp';
     const OPTION_DISCOUNT = 'discount';
     const OPTION_DROPLET = 'droplet';
+    const OPTION_PARALLEL_LIMIT = 'parallel-limit';
+
 
     /**
      * @internal
@@ -192,6 +195,13 @@ class RunCommand extends Command
                 'i',
                 InputOption::VALUE_NONE,
                 'Ignore delays defined between testcases'
+            )
+            ->addOption(
+                self::OPTION_PARALLEL_LIMIT,
+                'l',
+                InputOption::VALUE_REQUIRED,
+                'Number of maximum testcases being executed in a parallel',
+                50
             );
 
         $this->addUsage('staging firefox');
@@ -249,6 +259,17 @@ class RunCommand extends Command
             $output->writeln(sprintf('Browser: %s', $input->getArgument(self::ARGUMENT_BROWSER)));
             $output->writeln(sprintf('Environment: %s', $input->getArgument(self::ARGUMENT_ENVIRONMENT)));
         }
+
+        // Initialize Selenium server adapter and normalize server URL
+        $seleniumAdapter = $this->getSeleniumAdapter($input->getOption(self::OPTION_SERVER_URL));
+        $input->setOption(self::OPTION_SERVER_URL, $seleniumAdapter->getServerUrl());
+
+        // Make sure parallel-limit is greater than 0
+        $parallelLimit = (int) $input->getOption(self::OPTION_PARALLEL_LIMIT);
+        if ($parallelLimit === 0) {
+            throw new \RuntimeException('Parallel limit must be a whole number greater than 0');
+        }
+        $input->setOption(self::OPTION_PARALLEL_LIMIT, $parallelLimit);
 
         $this->getDispatcher()->dispatch(
             CommandEvents::RUN_TESTS_INIT,
@@ -319,7 +340,7 @@ class RunCommand extends Command
             return 1;
         }
 
-        // Optimize processes order
+        /*// Optimize processes order
         $processSet->optimizeOrder(new MaxTotalDelayStrategy());
 
         // Initialize first processes that should be run
@@ -327,7 +348,13 @@ class RunCommand extends Command
 
         // Start execution loop
         $this->io->isVeryVerbose() ? $this->io->section('Starting execution of testcases') : $this->io->newLine();
-        $allTestsPassed = $this->executionLoop($processSet);
+        $allTestsPassed = $this->executionLoop($processSet);*/
+
+        $maxParallelLimit = $input->getOption(self::OPTION_PARALLEL_LIMIT);
+
+        $executionLoop = new ExecutionLoop($processSet, $this->io, new MaxTotalDelayStrategy(), $maxParallelLimit);
+
+        $allTestsPassed = $executionLoop->start();
 
         if ($input->getOption(self::OPTION_NO_EXIT)) {
             return 0;
