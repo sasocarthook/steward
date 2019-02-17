@@ -1,0 +1,12 @@
+# Ignore libraries installed using Composer
+composer.phar
+vendor
+# Ignore test logs and unit-test logs
+logs
+src-tests/logs/
+src-tests/coverage/
+.php_cs.cache
+.php_cs
+
+# Ignore composer.lock because when installed as dependency, it does not affect anything either
+composer.lock
