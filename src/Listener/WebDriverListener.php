@@ -56,7 +56,7 @@ class WebDriverListener extends BaseTestListener
 
     public function startTestSuite(\PHPUnit_Framework_TestSuite $suite)
     {
-        if($this->config->droplet == "Digital Ocean"){
+        if ($this->config->droplet == "Digital Ocean") {
             $this->debugMessage("Creating Droplet");
             $this->droplet_ip = $this->create_droplet();
             $this->debugMessage("Droplet Created");
@@ -106,7 +106,7 @@ class WebDriverListener extends BaseTestListener
         sleep(1);
         $this->createWebDriver(
             $test,
-            ($this->droplet_ip) ? "http://" . $this->droplet_ip . ":4444/wd/hub": $this->config->serverUrl . SeleniumServerAdapter::HUB_ENDPOINT,
+            ($this->droplet_ip) ? "http://" . $this->droplet_ip . ":4444/wd/hub" : $this->config->serverUrl . SeleniumServerAdapter::HUB_ENDPOINT,
             $desiredCapabilities,
             $requiredCapabilities,
             $connectTimeoutMs = 2 * 60 * 1000,
@@ -114,51 +114,75 @@ class WebDriverListener extends BaseTestListener
             $requestTimeoutMs = 60 * 60 * 1000 // 1 hour (same as timeout for the whole process)
         );
 
-        if($this->config->browserName == "chrome_h" || $this->droplet_ip) {
+        if ($this->config->browserName == "chrome_h" || $this->droplet_ip) {
 
             $remoteStatus = ($this->droplet_ip) ? "Digital Ocean" : "Local";
 
             // Slack Attachment fields
-            $fields = [["title" => "Test Name",
-                        "value" => $test->getName(),
-                        "short" => false],
-                ["title" => "Shipping Country",
-                 "value" => $this->config->country,
-                 "short" => false],
-                ["title" => "Payment Processor",
-                 "value" => $this->config->paymentProcessor,
-                 "short" => false],
-                ["title" => "Tax Type",
+            $fields = [
+                [
+                    "title" => "Test Name",
+                    "value" => $test->getName(),
+                    "short" => false
+                ],
+                [
+                    "title" => "Shipping Country",
+                    "value" => $this->config->country,
+                    "short" => false
+                ],
+                [
+                    "title" => "Payment Processor",
+                    "value" => $this->config->paymentProcessor,
+                    "short" => false
+                ],
+                [
+                    "title" => "Tax Type",
                     "value" => $this->config->taxType,
-                    "short" => false],
-                ["title" => "Discount",
-                 "value" => $this->config->discount,
-                 "short" => false],
-                ["title" => "Statistics",
+                    "short" => false
+                ],
+                [
+                    "title" => "Discount",
+                    "value" => $this->config->discount,
+                    "short" => false
+                ],
+                [
+                    "title" => "Statistics",
                     "value" => $this->config->statistics,
-                    "short" => false],
-                ["title" => "Slack",
+                    "short" => false
+                ],
+                [
+                    "title" => "Slack",
                     "value" => $this->config->slack,
-                    "short" => false]
-                ];
+                    "short" => false
+                ]
+            ];
 
-            $this->slack_attachment("Starting tests on the " . $remoteStatus . " Server", "#fe60a1", $remoteStatus, $fields);
+            if ($this->config->slack == "on") {
+                $this->slack_attachment("Starting tests on the " . $remoteStatus . " Server", "#fe60a1", $remoteStatus,
+                    $fields);
+            }
         }
     }
 
     public function endTestSuite(\PHPUnit_Framework_TestSuite $suite)
     {
 
-        if($this->config->droplet == "Digital Ocean"){
+        if ($this->config->droplet == "Digital Ocean") {
             $this->debugMessage("Destroying Droplet");
             $this->delete_droplet();
 
             // Slack Attachment fields
-            $fields = [["title" => "Droplet",
-                        "value" => "Deleted",
-                        "short" => false]];
+            $fields = [
+                [
+                    "title" => "Droplet",
+                    "value" => "Deleted",
+                    "short" => false
+                ]
+            ];
 
-            $this->slack_attachment("Tests finished on the Remote Server", "#fe60a1", "DigitalOcean", $fields);
+            if ($this->config->slack == "on") {
+                $this->slack_attachment("Tests finished on the Remote Server", "#fe60a1", "DigitalOcean", $fields);
+            }
         }
     }
 
