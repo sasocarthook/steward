@@ -119,18 +119,28 @@ class WebDriverListener extends BaseTestListener
             $remoteStatus = ($this->droplet_ip) ? "Digital Ocean" : "Local";
 
             // Slack Attachment fields
-            $fields = [["title" => "Test name",
+            $fields = [["title" => "Test Name",
                         "value" => $test->getName(),
                         "short" => false],
                 ["title" => "Shipping Country",
                  "value" => $this->config->country,
                  "short" => false],
-                ["title" => "Payment processor",
+                ["title" => "Payment Processor",
                  "value" => $this->config->paymentProcessor,
                  "short" => false],
+                ["title" => "Tax Type",
+                    "value" => $this->config->taxType,
+                    "short" => false],
                 ["title" => "Discount",
                  "value" => $this->config->discount,
-                 "short" => false]];
+                 "short" => false],
+                ["title" => "Statistics",
+                    "value" => $this->config->statistics,
+                    "short" => false],
+                ["title" => "Slack",
+                    "value" => $this->config->slack,
+                    "short" => false]
+                ];
 
             $this->slack_attachment("Starting tests on the " . $remoteStatus . " Server", "#fe60a1", $remoteStatus, $fields);
         }

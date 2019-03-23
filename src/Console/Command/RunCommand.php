@@ -62,6 +62,9 @@ class RunCommand extends Command
     const OPTION_COUNTRY = 'country';
     const PAYMENT_PROCESSOR = 'pp';
     const OPTION_DISCOUNT = 'discount';
+    const OPTION_SLACK = 'slack';
+    const OPTION_STATISTICS = 'statistics';
+    const OPTION_TAX_TYPE = 'tax-type';
     const OPTION_DROPLET = 'droplet';
     const OPTION_PARALLEL_LIMIT = 'parallel-limit';
 
@@ -171,6 +174,24 @@ class RunCommand extends Command
                 null,
                 InputOption::VALUE_OPTIONAL,
                 '10off'
+            )
+            ->addOption(
+                self::OPTION_SLACK,
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'on or off'
+            )
+            ->addOption(
+                self::OPTION_STATISTICS,
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'on or off'
+            )
+            ->addOption(
+                self::OPTION_TAX_TYPE,
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'excluded or included'
             )
             ->addOption(
                 self::OPTION_DROPLET,

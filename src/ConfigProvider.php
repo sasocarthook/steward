@@ -21,6 +21,9 @@ use FlorianWolters\Component\Util\Singleton\SingletonTrait;
  * @property-read string $country
  * @property-read string $paymentProcessor
  * @property-read string $discount
+ * @property-read string $slack
+ * @property-read string $statistics
+ * @property-read string $taxType
  * @property-read string $droplet
  */
 class ConfigProvider
@@ -135,6 +138,9 @@ class ConfigProvider
             'COUNTRY',
             'PAYMENT_PROCESSOR',
             'DISCOUNT',
+            'SLACK',
+            'STATISTICS',
+            'TAX_TYPE',
             'DROPLET'
         ];
 
