@@ -52,8 +52,8 @@ abstract class AbstractPublisher
      * Publish testcase result
      *
      * @param string $testCaseName
-     * @param string $status One of ProcessSet::$processStatuses
-     * @param string $result One of ProcessSet::$processResults
+     * @param string $status One of ProcessSet::PROCESS_STATUSES
+     * @param string $result One of ProcessSet::PROCESS_RESULTS
      * @param \DateTimeInterface $startDate Testcase start datetime
      * @param \DateTimeInterface $endDate Testcase end datetime
      */
