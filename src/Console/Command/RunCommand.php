@@ -530,7 +530,7 @@ class RunCommand extends Command
         $resultsCount = $processSet->countResults();
         $allTestsPassed = ($resultsCount[ProcessWrapper::PROCESS_RESULT_PASSED] == $doneCount);
         $resultsInfo = [];
-        foreach (ProcessWrapper::$processResults as $resultType) {
+        foreach (ProcessWrapper::PROCESS_RESULTS as $resultType) {
             if ($resultsCount[$resultType] > 0) {
                 $resultsInfo[] = sprintf('%s: %d', $resultType, $resultsCount[$resultType]);
             }
@@ -669,7 +669,7 @@ class RunCommand extends Command
         $resultsInfo = [];
         $resultsCount = $processSet->countResults();
         if ($statusesCount[ProcessWrapper::PROCESS_STATUS_DONE] > 0) {
-            foreach (ProcessWrapper::$processResults as $resultType) {
+            foreach (ProcessWrapper::PROCESS_RESULTS as $resultType) {
                 if ($resultsCount[$resultType] > 0) {
                     $resultsInfo[] = sprintf(
                         '%s: <fg=%s>%d</>',
