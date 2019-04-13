@@ -93,7 +93,7 @@ class ProcessSet implements \Countable
      */
     public function get($status)
     {
-        Assertion::choice($status, ProcessWrapper::$processStatuses);
+        Assertion::choice($status, ProcessWrapper::PROCESS_STATUSES);
 
         $return = [];
         foreach ($this->processes as $className => $processWrapper) {
@@ -142,14 +142,14 @@ class ProcessSet implements \Countable
      */
     public function buildTree()
     {
-        if (!$this->tree) {
+        if ($this->tree == null) {
             $root = $this->graph->createVertex(0);
 
             // Create edges directed from the root node
             foreach ($this->processes as $className => $processWrapper) {
                 $vertex = $this->graph->getVertex($className);
 
-                if (is_null($processWrapper->getDelayMinutes())) { // doesn't depend on anything => link it to the root
+                if ($processWrapper->getDelayMinutes() == null) { // doesn't depend on anything => link it to the root
                     $root->createEdgeTo($vertex)->setWeight(0);
                 } else { // is dependant => link it to its dependency
                     // Throw error if dependency is to not existing vertex
@@ -209,7 +209,7 @@ class ProcessSet implements \Countable
     public function countStatuses()
     {
         $statusesCount = [];
-        foreach (ProcessWrapper::$processStatuses as $status) {
+        foreach (ProcessWrapper::PROCESS_STATUSES as $status) {
             $statusesCount[$status] = count($this->get($status));
         }
 
@@ -251,8 +251,8 @@ class ProcessSet implements \Countable
         $descendantProcesses = $this->getDependencyTree($className);
 
         $failedProcesses = [];
-        foreach ($descendantProcesses as $className => $processWrapper) {
-            $failedProcesses[$className] = $processWrapper;
+        foreach ($descendantProcesses as $processClassName => $processWrapper) {
+            $failedProcesses[$processClassName] = $processWrapper;
             $processWrapper->setStatus(ProcessWrapper::PROCESS_STATUS_DONE);
         }
 
