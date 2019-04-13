@@ -7,6 +7,7 @@ use Assert\Assertion;
 use Lmc\Steward\Publisher\AbstractPublisher;
 use Symfony\Component\Process\Exception\ProcessTimedOutException;
 use Symfony\Component\Process\Process;
+use PHPUnit\TextUI\TestRunner;
 
 /**
  * Wrapper for PHPUnit processes adding some metadata and custom logic
@@ -28,13 +29,13 @@ class ProcessWrapper
     const PROCESS_RESULT_PASSED = 'passed';
 
     /** @var array List of possible process statuses */
-    public static $processStatuses = [
+    const PROCESS_STATUSES = [
         self::PROCESS_STATUS_PREPARED,
         self::PROCESS_STATUS_QUEUED,
         self::PROCESS_STATUS_DONE,
     ];
     /** @var array List of possible process results */
-    public static $processResults = [
+    const PROCESS_RESULTS = [
         self::PROCESS_RESULT_PASSED,
         self::PROCESS_RESULT_FAILED,
         self::PROCESS_RESULT_FATAL,
@@ -149,7 +150,7 @@ class ProcessWrapper
      */
     public function setStatus($status)
     {
-        Assertion::choice($status, self::$processStatuses);
+        Assertion::choice($status, self::PROCESS_STATUSES);
 
         $this->status = $status;
 
