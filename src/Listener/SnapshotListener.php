@@ -53,7 +53,13 @@ class SnapshotListener extends BaseTestListener
             $test->wd->takeScreenshot($screenshotPath);
             // Save HTML snapshot of page
             $htmlPath = $savePath . $testIdentifier . '.html';
+            // Get performance
+            $performance = $test->wd->executeScript(
+                "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;");
+
             file_put_contents($htmlPath, $test->wd->getPageSource());
+            file_put_contents($savePath . $testIdentifier . '_console.txt', print_r($test->wd->manage()->getLog( 'browser' ), true));
+            file_put_contents($savePath . $testIdentifier . '_performance.txt', print_r($performance, true));
 
             $bufferedOutput = ob_get_clean();
             $outputBufferClosed = true;
