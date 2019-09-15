@@ -361,21 +361,25 @@ class RunCommand extends Command
             return 1;
         }
 
-        /*// Optimize processes order
+        /* Start without parallel */
+        //Optimize processes order
         $processSet->optimizeOrder(new MaxTotalDelayStrategy());
 
         // Initialize first processes that should be run
         $processSet->dequeueProcessesWithoutDelay($this->io);
 
-        // Start execution loop
+        // Start execution parallel
         $this->io->isVeryVerbose() ? $this->io->section('Starting execution of testcases') : $this->io->newLine();
-        $allTestsPassed = $this->executionLoop($processSet);*/
+        $allTestsPassed = $this->executionLoop($processSet);
+        /* End without parallel */
 
-        $maxParallelLimit = $input->getOption(self::OPTION_PARALLEL_LIMIT);
+        /* Start with parallel */
+        /*$maxParallelLimit = $input->getOption(self::OPTION_PARALLEL_LIMIT);
 
         $executionLoop = new ExecutionLoop($processSet, $this->io, new MaxTotalDelayStrategy(), $maxParallelLimit);
 
-        $allTestsPassed = $executionLoop->start();
+        $allTestsPassed = $executionLoop->start();*/
+        /* End with parallel */
 
         if ($input->getOption(self::OPTION_NO_EXIT)) {
             return 0;
