@@ -141,7 +141,8 @@ class ConfigProvider
             'SLACK',
             'STATISTICS',
             'TAX_TYPE',
-            'DROPLET'
+            'DROPLET',
+            'BROWSER_TYPE'
         ];
 
         // Merge defaults with possible custom options
