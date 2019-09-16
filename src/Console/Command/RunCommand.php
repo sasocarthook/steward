@@ -36,8 +36,6 @@ class RunCommand extends Command
     protected $supportedBrowsers = [
         'firefox' => WebDriverBrowserType::FIREFOX,
         'chrome' => WebDriverBrowserType::CHROME,
-        'chrome_i' => CustomBrowserType::CHROME_I,
-        'chrome_h' => CustomBrowserType::CHROME_H,
         'microsoftedge' => WebDriverBrowserType::MICROSOFT_EDGE,
         'internet explorer' => WebDriverBrowserType::IE,
         'safari' => WebDriverBrowserType::SAFARI,
@@ -67,7 +65,6 @@ class RunCommand extends Command
     const OPTION_TAX_TYPE = 'tax-type';
     const OPTION_DROPLET = 'droplet';
     const OPTION_PARALLEL_LIMIT = 'parallel-limit';
-
 
     /**
      * @internal
