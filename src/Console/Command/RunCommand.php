@@ -65,6 +65,7 @@ class RunCommand extends Command
     const OPTION_TAX_TYPE = 'tax-type';
     const OPTION_DROPLET = 'droplet';
     const OPTION_PARALLEL_LIMIT = 'parallel-limit';
+    const OPTIONAL_BROWSER_TYPE = 'browser-type';
 
     /**
      * @internal
@@ -220,6 +221,12 @@ class RunCommand extends Command
                 InputOption::VALUE_REQUIRED,
                 'Number of maximum testcases being executed in a parallel',
                 50
+            )
+            ->addOption(
+                self::OPTIONAL_BROWSER_TYPE,
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'incognito or headless'
             );
 
         $this->addUsage('staging firefox');
