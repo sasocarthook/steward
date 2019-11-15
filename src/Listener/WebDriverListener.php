@@ -28,7 +28,7 @@ class WebDriverListener extends BaseTestListener
 {
     const NO_BROWSER_ANNOTATION = 'noBrowser';
 
-    use Functions;
+    use CarthookFunctions;
 
     /** @var ConfigProvider */
     protected $config;
