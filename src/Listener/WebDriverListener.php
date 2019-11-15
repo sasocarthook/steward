@@ -14,7 +14,7 @@ use Lmc\Steward\WebDriver\NullWebDriver;
 use Lmc\Steward\WebDriver\RemoteWebDriver;
 use Nette\Reflection\AnnotationsParser;
 use PHPUnit\Framework\BaseTestListener;
-use My\Lib\Functions;
+use My\CarthookFunctions;
 
 /**
  * Listener for initialization and destruction of WebDriver before and after each test.
