@@ -8,6 +8,7 @@ use Lmc\Steward\ConfigProvider;
 use Lmc\Steward\Test\AbstractTestCase;
 use Lmc\Steward\Utils\Strings;
 use PHPUnit\Framework\BaseTestListener;
+use My\MyAbstractTestCase;
 
 /**
  * Listener to take snapshots of the page (screenshot and html snapshot) on each error or failure.
@@ -60,6 +61,7 @@ class SnapshotListener extends BaseTestListener
             file_put_contents($htmlPath, $test->wd->getPageSource());
             file_put_contents($savePath . $testIdentifier . '_console.txt', print_r($test->wd->manage()->getLog( 'browser' ), true));
             file_put_contents($savePath . $testIdentifier . '_performance.txt', print_r($performance, true));
+            file_put_contents($savePath . $testIdentifier . '_testData.txt', print_r(MyAbstractTestCase::$testData, true));
 
             $bufferedOutput = ob_get_clean();
             $outputBufferClosed = true;
