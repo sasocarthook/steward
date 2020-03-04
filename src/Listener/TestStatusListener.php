@@ -10,6 +10,7 @@ use Lmc\Steward\Publisher\TestingBotPublisher;
 use Lmc\Steward\Publisher\XmlPublisher;
 use Lmc\Steward\Selenium\SeleniumServerAdapter;
 use PHPUnit\Framework\BaseTestListener;
+use My\MyAbstractTestCase;
 
 /**
  * Listener to log status of test case and at the end of suite publish them using registered publishers.
@@ -109,6 +110,8 @@ class TestStatusListener extends BaseTestListener
         // publish test status to all publishers
         foreach ($this->publishers as $publisher) {
             try {
+                $savePath = ConfigProvider::getInstance()->logsDir . DIRECTORY_SEPARATOR;
+                file_put_contents($savePath . MyAbstractTestCase::$testCase . '_testData.txt', print_r(MyAbstractTestCase::$testData, true));
                 $publisher->publishResult(
                     get_class($test),
                     $test->getName(),

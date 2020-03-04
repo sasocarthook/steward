@@ -52,6 +52,15 @@ class SnapshotListener extends BaseTestListener
             // Save PNG screenshot
             $screenshotPath = $savePath . $testIdentifier . '.png';
             $test->wd->takeScreenshot($screenshotPath);
+            // Save PNG screenshot top
+            $screenshotPath_top = $savePath . $testIdentifier . '_top_.png';
+            $test->wd->executeScript('window.scrollTo(0,0); return true');
+            $test->wd->takeScreenshot($screenshotPath_top);
+            // Save PNG screenshot bottom
+            $screenshotPath_bottom = $savePath . $testIdentifier . '_bottom_.png';
+            $test->wd->executeScript('window.scrollTo(0,document.body.scrollHeight); return true');
+            $test->wd->takeScreenshot($screenshotPath_bottom);
+
             // Save HTML snapshot of page
             $htmlPath = $savePath . $testIdentifier . '.html';
             // Get performance
@@ -70,6 +79,8 @@ class SnapshotListener extends BaseTestListener
             $test->appendTestLog('');
             $test->appendTestLog('[WARN] Test failed on page "%s", taking page snapshots:', $currentUrl);
             $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($screenshotPath));
+            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($screenshotPath_top));
+            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($screenshotPath_bottom));
             $test->appendTestLog('HTML snapshot: "%s"', $this->getSnapshotUrl($htmlPath));
             $test->appendTestLog('');
         } catch (WebDriverException $e) {
