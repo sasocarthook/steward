@@ -8,6 +8,7 @@
                 <meta charset="utf-8" />
                 <title>Results | Steward</title>
                 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="../../../custom_results.css" rel="stylesheet"/>
             </head>
             <body>
                 <div class="container">
@@ -18,83 +19,127 @@
                         </h1>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><h1><xsl:value-of select="count(//testcase)"/> testcases</h1></div>
-                                <ul class="list-group">
-                                    <li class="list-group-item">prepared: <xsl:value-of select="count(//testcase[@status='prepared'])"/></li>
-                                    <li class="list-group-item">queued: <xsl:value-of select="count(//testcase[@status='queued'])"/></li>
-                                    <li class="list-group-item">
-                                        done: <xsl:value-of select="count(//testcase[@status='done'])"/>
-                                        <ul style="list-style-type: none; padding-left: 20px;">
-                                            <li>
-                                                <span class="glyphicon glyphicon-ok"></span>
-                                                passed: <xsl:value-of select="count(//testcase[@status='done' and @result='passed'])"/>
-                                            </li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                                failed: <xsl:value-of select="count(//testcase[@status='done' and @result='failed'])"/>
-                                            </li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-warning-sign"></span>
-                                                fatal: <xsl:value-of select="count(//testcase[@status='done' and @result='fatal'])"/>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h1>
-                                        <abbr title="Initialized so far"><xsl:value-of select="count(//test)"/></abbr>
-                                        tests
-                                    </h1>
+                    <xsl:choose>
+                        <xsl:when test="//@payment_processor != ''">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Payment procesor: <xsl:value-of select="(//@payment_processor)"/></li>
+                                    </ul>
                                 </div>
-                                <ul class="list-group">
-                                    <li class="list-group-item">started: <xsl:value-of select="count(//test[@status='started'])"/></li>
-                                    <li class="list-group-item">
-                                        done: <xsl:value-of select="count(//test[@status='done'])"/>
-                                        <ul style="list-style-type: none; padding-left: 20px;">
-                                            <li>
-                                                <span class="glyphicon glyphicon-ok"></span>
-                                                passed: <xsl:value-of select="count(//test[@status='done' and @result='passed'])"/>
-                                            </li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                                failed or broken: <xsl:value-of select="count(//test[@status='done' and (@result='failed' or @result='broken')])"/>
-                                            </li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-question-sign"></span>
-                                                skipped or incomplete: <xsl:value-of select="count(//test[@status='done' and (@result='skipped' or @result='incomplete')])"/>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h1>
+                                                <abbr title="Initialized so far"><xsl:value-of select="count(//test)"/></abbr>
+                                                tests
+                                            </h1>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">started: <xsl:value-of select="count(//test[@status='started'])"/></li>
+                                            <li class="list-group-item">
+                                                done: <xsl:value-of select="count(//test[@status='done'])"/>
+                                                <ul style="list-style-type: none; padding-left: 20px;">
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-ok"></span>
+                                                        passed: <xsl:value-of select="count(//test[@status='done' and @result='passed'])"/>
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                        failed or broken: <xsl:value-of select="count(//test[@status='done' and (@result='failed' or @result='broken')])"/>
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                        skipped or incomplete: <xsl:value-of select="count(//test[@status='done' and (@result='skipped' or @result='incomplete')])"/>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <xsl:variable name="testcase-progress-passed" select="round(100 div count(//testcase) * count(//testcase[@status='done' and @result='passed']))" />
-                    <xsl:variable name="testcase-progress-failed-and-fatal" select="round(100 div count(//testcase) * count(//testcase[@status='done' and (@result='failed' or @result='fatal')]))" />
-
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger" style="width: {$testcase-progress-failed-and-fatal}%">
-                            <xsl:value-of select="$testcase-progress-failed-and-fatal"/> %
-                        </div>
-                        <div style="width: {$testcase-progress-passed}%">
-                            <xsl:attribute name="class">
-                                progress-bar progress-bar-success
-                                <xsl:if test="count(//testcase) &gt; count(//testcase[@status='done'])">progress-bar-striped active</xsl:if>
-                            </xsl:attribute>
-                            <xsl:if test="count(//testcase[@status='done']) &lt; 1">
-                                <xsl:attribute name="aria-valuenow">0</xsl:attribute>
-                            </xsl:if>
-                            <xsl:value-of select="$testcase-progress-passed"/> %
-                        </div>
-                    </div>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h1><xsl:value-of select="count(//testcase)"/> testcases</h1></div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">prepared: <xsl:value-of select="count(//testcase[@status='prepared'])"/></li>
+                                            <li class="list-group-item">queued: <xsl:value-of select="count(//testcase[@status='queued'])"/></li>
+                                            <li class="list-group-item">
+                                                done: <xsl:value-of select="count(//testcase[@status='done'])"/>
+                                                <ul style="list-style-type: none; padding-left: 20px;">
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-ok"></span>
+                                                        passed: <xsl:value-of select="count(//testcase[@status='done' and @result='passed'])"/>
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                        failed: <xsl:value-of select="count(//testcase[@status='done' and @result='failed'])"/>
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-warning-sign"></span>
+                                                        fatal: <xsl:value-of select="count(//testcase[@status='done' and @result='fatal'])"/>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h1>
+                                                <abbr title="Initialized so far"><xsl:value-of select="count(//test)"/></abbr>
+                                                tests
+                                            </h1>
+                                        </div>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">started: <xsl:value-of select="count(//test[@status='started'])"/></li>
+                                            <li class="list-group-item">
+                                                done: <xsl:value-of select="count(//test[@status='done'])"/>
+                                                <ul style="list-style-type: none; padding-left: 20px;">
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-ok"></span>
+                                                        passed: <xsl:value-of select="count(//test[@status='done' and @result='passed'])"/>
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                        failed or broken: <xsl:value-of select="count(//test[@status='done' and (@result='failed' or @result='broken')])"/>
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-question-sign"></span>
+                                                        skipped or incomplete: <xsl:value-of select="count(//test[@status='done' and (@result='skipped' or @result='incomplete')])"/>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <xsl:variable name="testcase-progress-passed" select="round(100 div count(//testcase) * count(//testcase[@status='done' and @result='passed']))" />
+                            <xsl:variable name="testcase-progress-failed-and-fatal" select="round(100 div count(//testcase) * count(//testcase[@status='done' and (@result='failed' or @result='fatal')]))" />
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger" style="width: {$testcase-progress-failed-and-fatal}%">
+                                    <xsl:value-of select="$testcase-progress-failed-and-fatal"/> %
+                                </div>
+                                <div style="width: {$testcase-progress-passed}%">
+                                    <xsl:attribute name="class">
+                                        progress-bar progress-bar-success
+                                        <xsl:if test="count(//testcase) &gt; count(//testcase[@status='done'])">progress-bar-striped active</xsl:if>
+                                    </xsl:attribute>
+                                    <xsl:if test="count(//testcase[@status='done']) &lt; 1">
+                                        <xsl:attribute name="aria-valuenow">0</xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:value-of select="$testcase-progress-passed"/> %
+                                </div>
+                            </div>
+                        </xsl:otherwise>
+                    </xsl:choose>
 
                     <table class="table table-condensed table-hover results-table">
                         <thead>
@@ -105,6 +150,15 @@
                                 <th>Start</th>
                                 <th>End</th>
                                 <th>Duration</th>
+
+                                <xsl:choose>
+                                    <xsl:when test="//@payment_processor != ''">
+                                        <th>Details</th>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -151,6 +205,14 @@
                                     </td>
                                     <td class="duration">
                                     </td>
+                                    <xsl:choose>
+                                        <xsl:when test="//@payment_processor != ''">
+                                            <td class="details">
+                                            </td>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
                                 </tr>
                                 <xsl:if test="test">
                                     <xsl:for-each select="test">
@@ -209,6 +271,41 @@
                                             </td>
                                             <td class="duration">
                                             </td>
+                                            <xsl:choose>
+                                                <xsl:when test="//@payment_processor != ''">
+                                                    <td class="details">
+                                                        <article>
+                                                            <details>
+                                                                <summary>Screenshots</summary>
+                                                                <details>
+                                                                    <summary>Shipping</summary>
+                                                                    <a target="_blank" href="{@shipping_png}">Open</a>
+                                                                </details>
+                                                                <details>
+                                                                    <summary>Billing</summary>
+                                                                    <a target="_blank" href="{@billing_png}">Open</a>
+                                                                </details>
+                                                                <details>
+                                                                    <summary>Checkout Order Summary</summary>
+                                                                    <a target="_blank" href="{@order_summary_checkout}">Open</a>
+                                                                </details>
+                                                                <details>
+                                                                    <summary>Thank You Order Summary</summary>
+                                                                    <a target="_blank" href="{@order_summary_thankyou}">Open</a>
+                                                                </details>
+                                                            </details>
+                                                        </article>
+                                                        <article>
+                                                            <details>
+                                                                <summary>Assertion</summary>
+                                                                <a target="_blank" href="{@assertion}">Open</a>
+                                                            </details>
+                                                        </article>
+                                                    </td>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
                                         </tr>
                                     </xsl:for-each>
                                 </xsl:if>
@@ -216,45 +313,45 @@
                         </tbody>
                     </table>
                 </div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-            <script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+                <script>
                 <![CDATA[
-                $(function () {
-                    // Ensure the script was not yet initialized (see Firefox bug #380828)
-                    if (typeof window.wasInitialized != 'undefined') {
-                        return;
-                    }
-                    window.wasInitialized = true;
+                    $(function () {
+                        // Ensure the script was not yet initialized (see Firefox bug #380828)
+                        if (typeof window.wasInitialized != 'undefined') {
+                            return;
+                        }
+                        window.wasInitialized = true;
 
-                    // calculate and print test duration
-                    $('table tr.test-row, table tr.testcase-row').each(function() {
-                        var startDate = moment($('td.date-start', this).text());
-                        var endValue = $('td.date-end', this).text();
-                        var endDate = moment(endValue);
-                        var isPending = false;
-                        if (startDate.isValid() && endValue != '-') { // do not calculate when test fatal-ed
-                            if (!endDate.isValid()) { // still running, add current time
-                                isPending = true;
-                                endDate = moment();
+                        // calculate and print test duration
+                        $('table tr.test-row, table tr.testcase-row').each(function() {
+                            var startDate = moment($('td.date-start', this).text());
+                            var endValue = $('td.date-end', this).text();
+                            var endDate = moment(endValue);
+                            var isPending = false;
+                            if (startDate.isValid() && endValue != '-') { // do not calculate when test fatal-ed
+                                if (!endDate.isValid()) { // still running, add current time
+                                    isPending = true;
+                                    endDate = moment();
+                                }
+
+                                $('td.duration', this).html(
+                                        (isPending ? '<i>' : '') +
+                                        endDate.diff(startDate, 'seconds') + ' sec' +
+                                        (isPending ? '</i>' : '')
+                                );
                             }
+                        });
 
-                            $('td.duration', this).html(
-                                (isPending ? '<i>' : '') +
-                                endDate.diff(startDate, 'seconds') + ' sec' +
-                                (isPending ? '</i>' : '')
-                            );
-                        }
+                        // convert ISO-8601 dates to more readable ones
+                        $("td.date").each(function () {
+                            if ($(this).text().length && $(this).text() != '-') {
+                                $(this).text(moment($(this).text()).format('YYYY-MM-DD H:mm:ss'));
+                            }
+                        });
                     });
-
-                    // convert ISO-8601 dates to more readable ones
-                    $("td.date").each(function () {
-                        if ($(this).text().length && $(this).text() != '-') {
-                            $(this).text(moment($(this).text()).format('YYYY-MM-DD H:mm:ss'));
-                        }
-                    });
-                });
-                ]]>
+                    ]]>
             </script>
             </body>
         </html>
