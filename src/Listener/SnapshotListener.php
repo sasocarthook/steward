@@ -42,7 +42,8 @@ class SnapshotListener extends BaseTestListener
             return;
         }
 
-        $savePath = ConfigProvider::getInstance()->logsDir . DIRECTORY_SEPARATOR;
+        $screenshotPath = MyAbstractTestCase::$screenshotsPath;
+        $testPath = MyAbstractTestCase::$savePath;
         $testIdentifier = $this->assembleTestIdentifier($test);
 
         ob_start();
@@ -50,27 +51,26 @@ class SnapshotListener extends BaseTestListener
         try {
             $currentUrl = $test->wd->getCurrentURL();
             // Save PNG screenshot
-            $screenshotPath = $savePath . $testIdentifier . '.png';
-            $test->wd->takeScreenshot($screenshotPath);
+            $imgError = $screenshotPath . DIRECTORY_SEPARATOR . 'error.png';
+            $test->wd->takeScreenshot($imgError);
             // Save PNG screenshot top
-            $screenshotPath_top = $savePath . $testIdentifier . '_top_.png';
+            $imgTop = $screenshotPath . DIRECTORY_SEPARATOR . 'page_top_.png';
             $test->wd->executeScript('window.scrollTo(0,0); return true');
-            $test->wd->takeScreenshot($screenshotPath_top);
+            $test->wd->takeScreenshot($imgTop);
             // Save PNG screenshot bottom
-            $screenshotPath_bottom = $savePath . $testIdentifier . '_bottom_.png';
+            $imgBottom = $screenshotPath . DIRECTORY_SEPARATOR . 'page_bottom.png';
             $test->wd->executeScript('window.scrollTo(0,document.body.scrollHeight); return true');
-            $test->wd->takeScreenshot($screenshotPath_bottom);
+            $test->wd->takeScreenshot($imgBottom);
 
             // Save HTML snapshot of page
-            $htmlPath = $savePath . $testIdentifier . '.html';
+            $htmlPath = $testPath . DIRECTORY_SEPARATOR . 'page.html';
             // Get performance
             $performance = $test->wd->executeScript(
                 "var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;");
 
             file_put_contents($htmlPath, $test->wd->getPageSource());
-            file_put_contents($savePath . $testIdentifier . '_console.txt', print_r($test->wd->manage()->getLog( 'browser' ), true));
-            file_put_contents($savePath . $testIdentifier . '_performance.txt', print_r($performance, true));
-            file_put_contents($savePath . $testIdentifier . '_testData.txt', print_r(MyAbstractTestCase::$testData, true));
+            file_put_contents($testPath . DIRECTORY_SEPARATOR . 'console.txt', print_r($test->wd->manage()->getLog( 'browser' ), true));
+            file_put_contents($testPath . DIRECTORY_SEPARATOR . 'performance.txt', print_r($performance, true));
 
             $bufferedOutput = ob_get_clean();
             $outputBufferClosed = true;
@@ -78,9 +78,9 @@ class SnapshotListener extends BaseTestListener
 
             $test->appendTestLog('');
             $test->appendTestLog('[WARN] Test failed on page "%s", taking page snapshots:', $currentUrl);
-            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($screenshotPath));
-            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($screenshotPath_top));
-            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($screenshotPath_bottom));
+            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($imgError));
+            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($imgTop));
+            $test->appendTestLog('Screenshot: "%s"', $this->getSnapshotUrl($imgBottom));
             $test->appendTestLog('HTML snapshot: "%s"', $this->getSnapshotUrl($htmlPath));
             $test->appendTestLog('');
         } catch (WebDriverException $e) {
