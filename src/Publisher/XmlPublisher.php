@@ -6,6 +6,8 @@ use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Lmc\Steward\ConfigProvider;
 use Lmc\Steward\Selenium\SeleniumServerAdapter;
 use Lmc\Steward\Test\AbstractTestCaseBase;
+use My\CarthookFunctions;
+use My\MyAbstractTestCase;
 
 class XmlPublisher extends AbstractPublisher
 {
@@ -45,7 +47,9 @@ class XmlPublisher extends AbstractPublisher
     public function getFilePath()
     {
         if (!$this->fileDir) {
-            $this->fileDir = ConfigProvider::getInstance()->logsDir;
+            //$this->fileDir = ConfigProvider::getInstance()->logsDir;
+            $this->fileDir = MyAbstractTestCase::$saveDir;
+
         }
 
         return $this->fileDir . '/' . $this->fileName;
@@ -108,12 +112,28 @@ class XmlPublisher extends AbstractPublisher
             );
         }
 
+        // Define group and case
+        CarthookFunctions::defineTestGroupAndCase($testCaseName, $testName);
+
+        // Define save paths
+        CarthookFunctions::defineSavePaths();
+
+        // Create logs dir
+        CarthookFunctions::createLogsDir();
+
         $xml = $this->readAndLock();
 
         $testCaseNode = $this->getTestCaseNode($xml, $testCaseName);
         $testNode = $this->getTestNode($testCaseNode, $testCaseName, $testName);
 
         $testNode['status'] = $status;
+        $testNode['payment_processor'] = ConfigProvider::getInstance()->paymentProcessor;
+        $testNode['shipping_png'] = MyAbstractTestCase::$screenshotsPath . DIRECTORY_SEPARATOR . 'shipping.png';
+        $testNode['billing_png'] = MyAbstractTestCase::$screenshotsPath . DIRECTORY_SEPARATOR . 'billing.png';
+        $testNode['order_summary_checkout'] = MyAbstractTestCase::$screenshotsPath . DIRECTORY_SEPARATOR . 'order_summary_checkout.png';
+        $testNode['order_summary_thankyou'] = MyAbstractTestCase::$screenshotsPath . DIRECTORY_SEPARATOR . 'order_summary_thankyou.png';
+        $testNode['assertion'] = MyAbstractTestCase::$txtPath . DIRECTORY_SEPARATOR . 'assertion.txt';
+
 
         if ($status == self::TEST_STATUS_STARTED) {
             $testNode['start'] = (new \DateTimeImmutable())->format(\DateTime::ISO8601);
@@ -196,6 +216,7 @@ class XmlPublisher extends AbstractPublisher
         }
 
         if (!is_writable($fileDir)) {
+            CarthookFunctions::makeDirectory($fileDir);
             throw new \RuntimeException(sprintf('Directory "%s" does not exist or is not writeable.', $fileDir));
         }
 
