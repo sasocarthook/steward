@@ -109,15 +109,17 @@ class TestStatusListener extends BaseTestListener
 
         // publish test status to all publishers
         foreach ($this->publishers as $publisher) {
+
+            // 5 --> risky but passed
+            $testStatus = $test->getStatus() === 5 ? 1 : $test->getStatus();
+
             try {
-                $savePath = ConfigProvider::getInstance()->logsDir . DIRECTORY_SEPARATOR;
-                file_put_contents($savePath . MyAbstractTestCase::$testCase . '_testData.txt', print_r(MyAbstractTestCase::$testData, true));
                 $publisher->publishResult(
                     get_class($test),
                     $test->getName(),
                     $test,
                     $status = AbstractPublisher::TEST_STATUS_DONE,
-                    $result = AbstractPublisher::$testResultsMap[$test->getStatus()],
+                    $result = isset(AbstractPublisher::$testResultsMap[$testStatus]) && AbstractPublisher::$testResultsMap[$testStatus] === null ? "passed" : AbstractPublisher::$testResultsMap[$test->getStatus()],
                     $test->getStatusMessage()
                 );
             } catch (\Exception $e) {
