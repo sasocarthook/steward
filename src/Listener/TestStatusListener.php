@@ -111,7 +111,9 @@ class TestStatusListener extends BaseTestListener
         foreach ($this->publishers as $publisher) {
 
             // 5 --> risky but passed
-            $testStatus = $test->getStatus() === 5 ? 1 : $test->getStatus();
+            // 6 --> warning but passed
+            // 0 --> passed
+            $testStatus = ($test->getStatus() === 5 || $test->getStatus() === 6) ? 0 : $test->getStatus();
 
             try {
                 $publisher->publishResult(
@@ -119,7 +121,7 @@ class TestStatusListener extends BaseTestListener
                     $test->getName(),
                     $test,
                     $status = AbstractPublisher::TEST_STATUS_DONE,
-                    $result = isset(AbstractPublisher::$testResultsMap[$testStatus]) && AbstractPublisher::$testResultsMap[$testStatus] === null ? "passed" : AbstractPublisher::$testResultsMap[$test->getStatus()],
+                    $result = isset(AbstractPublisher::$testResultsMap[$testStatus]) && AbstractPublisher::$testResultsMap[$testStatus] === null ? "passed" : AbstractPublisher::$testResultsMap[$testStatus],
                     $test->getStatusMessage()
                 );
             } catch (\Exception $e) {
