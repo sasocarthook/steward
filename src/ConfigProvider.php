@@ -144,7 +144,8 @@ class ConfigProvider
             'STATISTICS',
             'TAX_TYPE',
             'DROPLET',
-            'BROWSER_TYPE'
+            'BROWSER_TYPE',
+            'SINGLE_LOG'
         ];
 
         // Merge defaults with possible custom options

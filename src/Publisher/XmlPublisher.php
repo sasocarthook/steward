@@ -47,7 +47,7 @@ class XmlPublisher extends AbstractPublisher
     public function getFilePath()
     {
         if (!$this->fileDir) {
-            if (ConfigProvider::getInstance()->singleLog) {
+            if (isset(ConfigProvider::getInstance()->singleLog) && ConfigProvider::getInstance()->singleLog === true) {
                 $this->fileDir = MyAbstractTestCase::$saveDir;
             } else {
                 $this->fileDir = ConfigProvider::getInstance()->logsDir;
@@ -120,7 +120,7 @@ class XmlPublisher extends AbstractPublisher
         $testNode = $this->getTestNode($testCaseNode, $testCaseName, $testName);
         $testNode['status'] = $status;
 
-        if (ConfigProvider::getInstance()->singleLog) {
+        if (isset(ConfigProvider::getInstance()->singleLog) && ConfigProvider::getInstance()->singleLog === true) {
 
             // Define group and case
             CarthookFunctions::defineTestGroupAndCase($testCaseName, $testName);
@@ -219,7 +219,7 @@ class XmlPublisher extends AbstractPublisher
 
         if (!is_writable($fileDir)) {
 
-            if (ConfigProvider::getInstance()->singleLog) {
+            if (isset(ConfigProvider::getInstance()->singleLog) && ConfigProvider::getInstance()->singleLog === true) {
                 CarthookFunctions::makeDirectory($fileDir);
             }
 

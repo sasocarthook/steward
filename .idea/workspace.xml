@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7450fac8-802f-4e4c-8396-41e3bd803302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Listener/SnapshotListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listener/SnapshotListener.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="27">
+              <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -102,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3036">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            <state relative-caret-position="356">
+              <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
               <folding>
                 <element signature="e#40#92#0#PHP" expanded="true" />
               </folding>
@@ -127,8 +127,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Publisher/XmlPublisher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4122">
-              <caret line="327" column="1" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="1" />
+            <state relative-caret-position="139">
+              <caret line="135" column="34" selection-start-line="135" selection-start-column="34" selection-end-line="135" selection-end-column="34" />
               <folding>
                 <element signature="e#41#87#0#PHP" expanded="true" />
               </folding>
@@ -178,11 +178,11 @@
         <option value="$PROJECT_DIR$/src/Process/ProcessSet.php" />
         <option value="$PROJECT_DIR$/src/Listener/WebDriverListener.php" />
         <option value="$PROJECT_DIR$/src/Resources/results.xsl" />
-        <option value="$PROJECT_DIR$/src/Listener/SnapshotListener.php" />
         <option value="$PROJECT_DIR$/src/Listener/TestStatusListener.php" />
         <option value="$PROJECT_DIR$/src/Console/Command/RunCommand.php" />
         <option value="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" />
         <option value="$PROJECT_DIR$/src/ConfigProvider.php" />
+        <option value="$PROJECT_DIR$/src/Listener/SnapshotListener.php" />
         <option value="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" />
       </list>
     </option>
@@ -313,12 +313,12 @@
       <workItem from="1583364180874" duration="109000" />
       <workItem from="1583706522211" duration="1494000" />
       <workItem from="1584788827339" duration="1084000" />
-      <workItem from="1584790795534" duration="279000" />
+      <workItem from="1584790795534" duration="1257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19412000" />
+    <option name="totallyTimeSpent" value="20390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="6" />
@@ -445,29 +445,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Listener/WebDriverListener.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#40#96#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3036">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
-          <folding>
-            <element signature="e#40#92#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -483,10 +466,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Publisher/XmlPublisher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4122">
-          <caret line="327" column="1" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="1" />
+        <state relative-caret-position="139">
+          <caret line="135" column="34" selection-start-line="135" selection-start-column="34" selection-end-line="135" selection-end-column="34" />
           <folding>
             <element signature="e#41#87#0#PHP" expanded="true" />
           </folding>

@@ -42,7 +42,7 @@ class SnapshotListener extends BaseTestListener
             return;
         }
 
-        if (ConfigProvider::getInstance()->singleLog) {
+        if (isset(ConfigProvider::getInstance()->singleLog) && ConfigProvider::getInstance()->singleLog === true) {
 
             $screenshotPath = MyAbstractTestCase::$screenshotsPath;
             $testPath = MyAbstractTestCase::$savePath;
@@ -69,7 +69,7 @@ class SnapshotListener extends BaseTestListener
             $test->appendTestLog('');
             $test->appendTestLog('[WARN] Test failed on page "%s", taking page snapshots:', $currentUrl);
 
-            if (ConfigProvider::getInstance()->singleLog) {
+            if (isset(ConfigProvider::getInstance()->singleLog) && ConfigProvider::getInstance()->singleLog === true) {
 
                 $imgError = $screenshotPath . DIRECTORY_SEPARATOR . 'error.png';
                 $test->wd->takeScreenshot($imgError);
