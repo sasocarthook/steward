@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7450fac8-802f-4e4c-8396-41e3bd803302" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConfigProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/Command/RunCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Command/RunCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +18,8 @@
     <session id="-520632495">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
-          <entry key="project.open.time.0" value="10" />
+          <entry key="project.closed" value="27" />
+          <entry key="project.open.time.0" value="11" />
           <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -30,7 +28,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Listener/TestStatusListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="118" column="42" lean-forward="true" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
+            <state relative-caret-position="2714">
+              <caret line="118" column="42" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
               <folding>
                 <element signature="e#40#71#0#PHP" expanded="true" />
               </folding>
@@ -65,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Console/Command/RunCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
+            <state relative-caret-position="4761">
               <caret line="226" column="43" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="43" />
             </state>
           </provider>
@@ -74,17 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Process/ProcessSetCreator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4016">
+            <state relative-caret-position="4508">
               <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="37" />
+            <state relative-caret-position="483">
+              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -92,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Listener/WebDriverListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
+            <state relative-caret-position="713">
               <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#40#96#0#PHP" expanded="true" />
@@ -104,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2898">
+            <state relative-caret-position="3036">
               <caret line="132" selection-start-line="132" selection-end-line="132" />
               <folding>
                 <element signature="e#40#92#0#PHP" expanded="true" />
@@ -126,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Publisher/XmlPublisher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="989">
-              <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+            <state relative-caret-position="4122">
+              <caret line="327" column="1" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="1" />
               <folding>
                 <element signature="e#41#87#0#PHP" expanded="true" />
               </folding>
@@ -180,12 +178,12 @@
         <option value="$PROJECT_DIR$/src/Process/ProcessSet.php" />
         <option value="$PROJECT_DIR$/src/Listener/WebDriverListener.php" />
         <option value="$PROJECT_DIR$/src/Resources/results.xsl" />
-        <option value="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" />
         <option value="$PROJECT_DIR$/src/Listener/SnapshotListener.php" />
         <option value="$PROJECT_DIR$/src/Listener/TestStatusListener.php" />
         <option value="$PROJECT_DIR$/src/Console/Command/RunCommand.php" />
         <option value="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" />
         <option value="$PROJECT_DIR$/src/ConfigProvider.php" />
+        <option value="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" />
       </list>
     </option>
   </component>
@@ -196,6 +194,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="38" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="823" />
@@ -254,7 +253,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="test&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Listener/TestStatusListener.php&#10;snap&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Listener/SnapshotListener.php&#10;xml&#9;null&#9;null&#10;results.&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Resources/results.xsl&#10;CONFIGPRO&#9;null&#9;null&#10;configp&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/ConfigProvider.php" />
+    <property name="SearchEverywhereHistoryKey" value="xml&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Publisher/XmlPublisher.php&#10;test&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Listener/TestStatusListener.php&#10;snap&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Listener/SnapshotListener.php&#10;results.&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Resources/results.xsl&#10;CONFIGPRO&#9;null&#9;null&#10;configp&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/ConfigProvider.php" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="/Applications/XAMPP/xamppfiles/htdocs/ktmdata" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -313,18 +312,19 @@
       <workItem from="1581972514973" duration="10000" />
       <workItem from="1583364180874" duration="109000" />
       <workItem from="1583706522211" duration="1494000" />
-      <workItem from="1584788827339" duration="337000" />
+      <workItem from="1584788827339" duration="1084000" />
+      <workItem from="1584790795534" duration="279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18386000" />
+    <option name="totallyTimeSpent" value="19412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25608012" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25965664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -423,17 +423,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Listener/TestStatusListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="118" column="42" lean-forward="true" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
+        <state relative-caret-position="2714">
+          <caret line="118" column="42" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
           <folding>
             <element signature="e#40#71#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Console/Command/RunCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4761">
+          <caret line="226" column="43" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Process/ProcessSetCreator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4508">
+          <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Listener/WebDriverListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
+        <state relative-caret-position="713">
           <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#40#96#0#PHP" expanded="true" />
@@ -443,7 +464,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2898">
+        <state relative-caret-position="3036">
           <caret line="132" selection-start-line="132" selection-end-line="132" />
           <folding>
             <element signature="e#40#92#0#PHP" expanded="true" />
@@ -464,32 +485,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Publisher/XmlPublisher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        <state relative-caret-position="4122">
+          <caret line="327" column="1" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="1" />
           <folding>
             <element signature="e#41#87#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Console/Command/RunCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="226" column="43" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Process/ProcessSetCreator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4016">
-          <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="37" />
         </state>
       </provider>
     </entry>
