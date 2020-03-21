@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7450fac8-802f-4e4c-8396-41e3bd803302" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConfigProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Console/Command/RunCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/Command/RunCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Process/ExecutionLoop.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,59 +13,51 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-520632495">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="26" />
+          <entry key="project.open.time.0" value="10" />
+          <entry key="project.open.time.1" value="8" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.242" value="1" />
+          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="3" />
+          <entry key="PHP" value="18" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="41" />
+          <entry key="PHP" value="478" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENCE.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="207">
-                <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/Listener/TestStatusListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="118" column="42" lean-forward="true" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
+              <folding>
+                <element signature="e#40#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,20 +65,75 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Console/Command/RunCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="35" column="34" selection-end-line="663" />
-              <folding>
-                <element signature="e#46#75#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="78">
+              <caret line="226" column="43" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Process/ProcessSetCreator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4016">
+              <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+        <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1473">
-              <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="304">
+              <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Listener/WebDriverListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#40#96#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2898">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
+              <folding>
+                <element signature="e#40#92#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Resources/results.xsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3887">
+              <caret line="240" column="69" selection-start-line="240" selection-start-column="69" selection-end-line="240" selection-end-column="69" />
+              <folding>
+                <element signature="n#div#0;n#xsl:otherwise#0;n#xsl:choose#0;n#div#0;n#body#0;n#html#0;n#xsl:template#0;n#xsl:stylesheet#0;n#!!top" />
+                <element signature="n#div#1;n#xsl:otherwise#0;n#xsl:choose#0;n#div#0;n#body#0;n#html#0;n#xsl:template#0;n#xsl:stylesheet#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Publisher/XmlPublisher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="989">
+              <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+              <folding>
+                <element signature="e#41#87#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +143,27 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>loop</find>
+      <find>paymentProcessor</find>
+      <find>discount</find>
+      <find>OPTION_DISCOUNT</find>
+      <find>slack_attachment</find>
+      <find>DISCOUNT</find>
+      <find>endTestSuite</find>
+      <find>loop-&gt;start</find>
+      <find>config-&gt;slack</find>
+      <find>doTestStep</find>
+      <find>execution</find>
+      <find>chrome_h</find>
+      <find>chrome</find>
+      <find>WebDriverBrowserType</find>
+      <find>processsetcre</find>
+      <find>TAX_TYPE</find>
+      <find>\Functions</find>
+      <find>droplet</find>
+      <find>OPTIONAL_BROWSER_TYPE</find>
+      <find>isDebug</find>
+      <find>browsertype</find>
+      <find>browserType</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,8 +174,18 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
-        <option value="$PROJECT_DIR$/src/Console/Command/RunCommand.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/Process/ProcessWrapper.php" />
+        <option value="$PROJECT_DIR$/src/Publisher/AbstractPublisher.php" />
+        <option value="$PROJECT_DIR$/src/Process/ProcessSet.php" />
+        <option value="$PROJECT_DIR$/src/Listener/WebDriverListener.php" />
+        <option value="$PROJECT_DIR$/src/Resources/results.xsl" />
+        <option value="$PROJECT_DIR$/src/Publisher/XmlPublisher.php" />
+        <option value="$PROJECT_DIR$/src/Listener/SnapshotListener.php" />
+        <option value="$PROJECT_DIR$/src/Listener/TestStatusListener.php" />
+        <option value="$PROJECT_DIR$/src/Console/Command/RunCommand.php" />
+        <option value="$PROJECT_DIR$/src/Process/ProcessSetCreator.php" />
+        <option value="$PROJECT_DIR$/src/ConfigProvider.php" />
       </list>
     </option>
   </component>
@@ -119,7 +198,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="825" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -143,6 +222,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,23 +239,22 @@
               <item name="steward" type="b2602c69:ProjectViewProjectNode" />
               <item name="steward" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Listener" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="steward" type="b2602c69:ProjectViewProjectNode" />
               <item name="steward" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Console" type="462c0819:PsiDirectoryNode" />
-              <item name="Command" type="462c0819:PsiDirectoryNode" />
+              <item name="Process" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="test&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Listener/TestStatusListener.php&#10;snap&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Listener/SnapshotListener.php&#10;xml&#9;null&#9;null&#10;results.&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/Resources/results.xsl&#10;CONFIGPRO&#9;null&#9;null&#10;configp&#9;FILE&#9;file:///Users/sasokrajnc/SERVER/carthook/steward/src/ConfigProvider.php" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="/Applications/XAMPP/xamppfiles/htdocs/ktmdata" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -208,17 +287,44 @@
       <option name="presentableId" value="Default" />
       <updated>1550360121930</updated>
       <workItem from="1550360123175" duration="54000" />
+      <workItem from="1553370719203" duration="3686000" />
+      <workItem from="1553430372377" duration="18000" />
+      <workItem from="1555146787763" duration="1926000" />
+      <workItem from="1557314120955" duration="821000" />
+      <workItem from="1557499253193" duration="209000" />
+      <workItem from="1557612799324" duration="614000" />
+      <workItem from="1557816949041" duration="599000" />
+      <workItem from="1557818698056" duration="599000" />
+      <workItem from="1567023757987" duration="970000" />
+      <workItem from="1567104443625" duration="599000" />
+      <workItem from="1567433186103" duration="599000" />
+      <workItem from="1567883119395" duration="20000" />
+      <workItem from="1568572922693" duration="78000" />
+      <workItem from="1568573222104" duration="55000" />
+      <workItem from="1568662126233" duration="1933000" />
+      <workItem from="1571902555051" duration="678000" />
+      <workItem from="1572033617567" duration="32000" />
+      <workItem from="1573814323721" duration="77000" />
+      <workItem from="1573814623116" duration="658000" />
+      <workItem from="1574284015842" duration="35000" />
+      <workItem from="1581969303805" duration="141000" />
+      <workItem from="1581972240968" duration="6000" />
+      <workItem from="1581972259811" duration="49000" />
+      <workItem from="1581972514973" duration="10000" />
+      <workItem from="1583364180874" duration="109000" />
+      <workItem from="1583706522211" duration="1494000" />
+      <workItem from="1584788827339" duration="337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1134000" />
+    <option name="totallyTimeSpent" value="18386000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="825" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25608012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -231,7 +337,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32122093" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -247,12 +353,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/LICENCE.md">
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="207">
-            <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
@@ -265,28 +369,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+    <entry file="file://$PROJECT_DIR$/LICENCE.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="207">
+            <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Console/Command/RunCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Selenium/CapabilitiesResolver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="35" column="34" selection-end-line="663" />
-          <folding>
-            <element signature="e#46#75#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="3450">
+          <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Process/ExecutionLoop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Process/ProcessSet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6394">
+          <caret line="283" column="1" selection-start-line="283" selection-start-column="1" selection-end-line="283" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Process/ProcessWrapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5382">
+          <caret line="239" selection-start-line="239" selection-end-line="239" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1473">
-          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="322">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Publisher/AbstractPublisher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/TestStatusListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="118" column="42" lean-forward="true" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
+          <folding>
+            <element signature="e#40#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/WebDriverListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#40#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/SnapshotListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2898">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="e#40#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources/results.xsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3887">
+          <caret line="240" column="69" selection-start-line="240" selection-start-column="69" selection-end-line="240" selection-end-column="69" />
+          <folding>
+            <element signature="n#div#0;n#xsl:otherwise#0;n#xsl:choose#0;n#div#0;n#body#0;n#html#0;n#xsl:template#0;n#xsl:stylesheet#0;n#!!top" />
+            <element signature="n#div#1;n#xsl:otherwise#0;n#xsl:choose#0;n#div#0;n#body#0;n#html#0;n#xsl:template#0;n#xsl:stylesheet#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Publisher/XmlPublisher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="48" column="30" lean-forward="true" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+          <folding>
+            <element signature="e#41#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Console/Command/RunCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="226" column="43" selection-start-line="226" selection-start-column="22" selection-end-line="226" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Process/ProcessSetCreator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4016">
+          <caret line="208" column="32" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ConfigProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="37" />
         </state>
       </provider>
     </entry>

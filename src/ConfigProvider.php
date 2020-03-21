@@ -26,6 +26,7 @@ use FlorianWolters\Component\Util\Singleton\SingletonTrait;
  * @property-read string $taxType
  * @property-read string $droplet
  * @property-read string $browserType
+ * @property-read string $singleLog
  */
 class ConfigProvider
 {

@@ -66,6 +66,7 @@ class RunCommand extends Command
     const OPTION_DROPLET = 'droplet';
     const OPTION_PARALLEL_LIMIT = 'parallel-limit';
     const OPTIONAL_BROWSER_TYPE = 'browser-type';
+    const OPTION_SINGLE_LOG = 'single-log';
 
     /**
      * @internal
@@ -227,6 +228,12 @@ class RunCommand extends Command
                 null,
                 InputOption::VALUE_OPTIONAL,
                 'incognito or headless'
+            )
+            ->addOption(
+                self::OPTION_SINGLE_LOG,
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'true or false'
             );
 
         $this->addUsage('staging firefox');

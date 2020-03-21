@@ -206,6 +206,7 @@ class ProcessSetCreator
             ->setEnv('TAX_TYPE', $this->input->getOption(RunCommand::OPTION_TAX_TYPE))
             ->setEnv('DROPLET', $this->input->getOption(RunCommand::OPTION_DROPLET))
             ->setEnv('BROWSER_TYPE', $this->input->getOption(RunCommand::OPTIONAL_BROWSER_TYPE))
+            ->setEnv('SINGLE_LOG', $this->input->getOption(RunCommand::OPTION_SINGLE_LOG))
             ->setPrefix([PHP_BINARY, $phpunitExecutable])
             ->setArguments(array_merge($processEvent->getArgs(), [$fileName]))
             ->setTimeout(3600); // 1 hour timeout to end possibly stuck processes
