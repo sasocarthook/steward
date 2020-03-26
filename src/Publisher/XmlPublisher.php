@@ -74,6 +74,7 @@ class XmlPublisher extends AbstractPublisher
         \DateTimeInterface $startDate = null,
         \DateTimeInterface $endDate = null
     ) {
+
         $xml = $this->readAndLock();
 
         $testCaseNode = $this->getTestCaseNode($xml, $testCaseName);
@@ -114,7 +115,7 @@ class XmlPublisher extends AbstractPublisher
             );
         }
 
-        if (isset(ConfigProvider::getInstance()->singleLog) && ConfigProvider::getInstance()->singleLog === 'true') {
+        if (isset(ConfigProvider::getInstance()->singleLog) && !empty(ConfigProvider::getInstance()->singleLog)) {
 
             // Define group and case
             CarthookFunctions::defineTestGroupAndCase($testCaseName, $testName);
